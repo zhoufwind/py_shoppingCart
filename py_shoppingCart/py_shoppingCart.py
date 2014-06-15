@@ -1,20 +1,20 @@
 
 _salary = input("Enter how many salary you got: ")
 
-_menu = ['apple', 10, 'banana', 20, 'pineapple', 30, 'watermelon', 35]
+_products = ['apple', 'banana', 'pineapple', 'watermelon']
+_prices = [10, 20, 30, 35]
 
-_loop = (_menu.index(_menu[-1]) + 1) / 2
-print "Menu: \n"
-for i in range(_loop):
-    print _menu[i*2], _menu[i*2+1]
+print "Products: \n"
+for p in _products:
+    print p, _prices[_products.index(p)]
 
 _buyornot = True
 while _buyornot:
     _select = raw_input("What do you want to buy? ").strip()
     if len(_select) == 0: continue
-    _rest = _salary - _menu[_menu.index(_select)+1]
+    _rest = _salary - _prices[_products.index(_select)]
     if (_rest) >= 0:
-        print "BUY\nYou have:", _rest, "left!"
+        print "BUY:",_select, "cost you:",_prices[_products.index(_select)],"\nYou have:", _rest, "left!"
         _salary = _rest;
         _buyornot = raw_input("Do you want to continue?(y/n)").strip()
         if _buyornot == 'n':
