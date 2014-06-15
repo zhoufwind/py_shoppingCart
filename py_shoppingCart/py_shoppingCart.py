@@ -11,6 +11,7 @@ for i in range(_loop):
 _buyornot = True
 while _buyornot:
     _select = raw_input("What do you want to buy? ").strip()
+    if len(_select) == 0: continue
     _rest = _salary - _menu[_menu.index(_select)+1]
     if (_rest) >= 0:
         print "BUY\nYou have:", _rest, "left!"
